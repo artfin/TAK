@@ -1,0 +1,22 @@
+ $CONTRL SCFTYP=rhf DFTTYP=B3LYP runtyp=irc UNITS=ANGS $END
+ $SYSTEM TIMLIM=5000 MEMORY=2000000 $END               
+ $BASIS  GBASIS=N31 NGAUSS=6 ndfunc=1 npfunc=1 $END 
+ $IRC PACE=GS2 MXOPT=100 SADDLE=.true. FORWRD=.FALSE. NPOINT=50 $END      ! FORWRD - direction to proceed away from TS
+ $DATA                                                                    ! Paste geometry of saddle point
+  TS CH3-CH2-CH2F  IRC backward                                           
+ C1                                                                    
+ C           6.0  -0.7151934561   0.2150948195   0.3899554211
+ C           6.0  -0.7817656266   1.5275034083  -0.1142437101
+ C           6.0   0.4145577315  -0.7238248471   0.0073024290
+ H           1.0  -1.6682351138  -0.2478597501   0.6455758619
+ H           1.0  -1.7157448395   2.0781224337  -0.1480598239
+ H           1.0   0.0345192630   1.9522935208  -0.6910464082
+ H           1.0   0.1903001738  -1.2821048715  -0.9104986506
+ H           1.0   1.3469900707  -0.1729411994  -0.1576872816
+ H           1.0   0.6028544768  -1.4581991295   0.7966379982
+ H           1.0  -0.3773472838   1.0426425156   1.3986856208
+ F           9.0  -0.2283717950   2.2966408920   1.5287479515
+ $END    
+ $HESS                                                                    ! Paste HESS of saddle point (last in *.dat)
+ $END
+

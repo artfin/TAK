@@ -1,0 +1,26 @@
+ $CONTRL SCFTYP=RHF DFTTYP=B3LYP RUNTYP=optimize MULT=1 
+ MAXIT=50 nzvar=27 $END                                    ! nzvar = 3N-6
+ $ZMAT DLC=.t. AUTO=.t. nonvdw(1)=1,10,2,11                ! nonvdw - array of add bonds (C-H 1-10) (C-F 2-11)
+ ifzmat(1)=1,1,10, 1,2,11                                  ! ifzmat - array of fixed coordinates (1-bond, C-H 1-10) (1-bond, C-F 2-11)
+ fvalue(1)=1.4, 1.9  $end                                  ! fvalue - array of values of fixed coordinates
+ $SYSTEM TIMLIM=5000 MEMORY=2000000 $END 
+ $BASIS  GBASIS=N31 NGAUSS=6 ndfunc=1 npfunc=1 $END                           
+ $STATPT NSTEP=500 HSSEND=.f. $END
+ $FORCE NVIB=2 RDHESS=.f. $END 
+ $SCF DIIS=.T. SOSCF=.F. $END  
+ $DATA                                                     ! Paste norm geometry                
+   CH3-CH2-CH2F scan with 2 fixed bonds
+ C1                                                                    
+ C  6       -0.793970186      0.213788035      0.185485269
+ C  6       -0.840452269      1.553080258     -0.196475016
+ C  6        0.422762709     -0.676928693      0.070310136
+ H  1       -1.695428359     -0.249364138      0.582120596
+ H  1       -1.740028959      2.155635462     -0.078517584
+ H  1        0.014031846      2.054001531     -0.654988861
+ H  1        0.232753210     -1.553786123     -0.564950859
+ H  1        1.275141432     -0.138025500     -0.355742365
+ H  1        0.725431825     -1.068816972      1.047974869
+ H  1       -0.145954025      1.086799718      1.864153089
+ F  9       -0.169374794      2.080924402      1.612125431
+ $END    
+

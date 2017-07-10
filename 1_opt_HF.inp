@@ -1,0 +1,14 @@
+ $CONTRL SCFTYP=RHF DFTTYP=B3LYP RUNTYP=optimize MULT=1 $END
+ $SYSTEM TIMLIM=5000 MEMORY=2000000 $END
+ $BASIS  GBASIS=N31 NGAUSS=6 ndfunc=1 npfunc=1 $END
+ $STATPT NSTEP=150 HSSEND=.T. $END
+ $FORCE NVIB=2 RDHESS=.f. TEMP(1)=0.001,298.15,1200,
+ 1300,1400,1500,1600 $END
+ $SCF DIIS=.T. SOSCF=.F. $END
+ $DATA
+  HF Optimization
+ Cnv 4                                                     ! C1 for assymmetric molecule (no empty line) 
+  
+ H  1.0     0.000    0.000    0.000                        ! Name (any name), nuclear charge, x, y, z 
+ F  9.0     0.000    0.000    0.950                        ! Name (any name), nuclear charge, x, y, z
+ $END

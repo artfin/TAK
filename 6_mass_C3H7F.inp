@@ -1,0 +1,25 @@
+ $CONTRL SCFTYP=RHF DFTTYP=B3LYP RUNTYP=HESSIAN MULT=1 $END
+ $MASS AMASS(10)=2.0140 $END                               ! Atom number 10 is deuterium
+ $SYSTEM TIMLIM=5000 MEMORY=8000000 $END
+ $BASIS  GBASIS=N31 NGAUSS=6 ndfunc=1 npfunc=1 $END
+ $STATPT HSSEND=.T. $END
+ $FORCE NVIB=2 RDHESS=.t. $END                             ! To read hessian from $HESS
+ $SCF DIIS=.T. SOSCF=.F. $END
+ $DATA                                                     ! Paste geometry 
+  CH3-CH2-CH2F 
+ C1
+ C           6.0  -0.6278718061   0.2174962147   0.6333765717
+ C           6.0  -0.7996239643   1.4208373676  -0.0761402366
+ C           6.0   0.5693984375  -0.6831109786   0.3894822647
+ H           1.0  -1.5400737345  -0.2675021787   0.9806322706
+ H           1.0  -1.7733369920   1.8892544648  -0.1697629747
+ H           1.0  -0.0279545293   1.8045187861  -0.7370168204
+ H           1.0   0.3925821264  -1.3926950265  -0.4288230743
+ H           1.0   1.4594357698  -0.0968275543   0.1361587474
+ H           1.0   0.8082141737  -1.2706377813   1.2816476769
+ H           1.0  -0.3415501491   1.2196812465   1.4870550856
+ F           9.0  -0.2703692491   2.4842425316   1.4035940210
+ $END
+ $HESS                                                     ! Paste hessian from *.dat
+ $END
+ 
